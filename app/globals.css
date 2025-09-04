@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: hsl(240, 80%, 50%);
+  --color-accent: hsl(180, 70%, 45%);
+  --color-bg: hsl(220, 25%, 10%);
+  --color-surface: hsl(220, 25%, 15%);
+  --color-text-primary: hsl(0, 0%, 95%);
+  --color-text-secondary: hsl(0, 0%, 70%);
+}
+
+@layer base {
+  * {
+    border-color: hsl(220, 25%, 20%);
+  }
+  
+  body {
+    @apply bg-bg text-textPrimary;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-textPrimary;
+  }
+}
+
+@layer components {
+  .display {
+    @apply text-4xl font-bold;
+  }
+  
+  .headline {
+    @apply text-2xl font-semibold;
+  }
+  
+  .body {
+    @apply text-base font-normal leading-7;
+  }
+  
+  .card {
+    @apply bg-surface rounded-lg p-4 shadow-card;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface hover:bg-surface/80 text-textPrimary px-4 py-2 rounded-md transition-colors border border-gray-700;
+  }
+}
