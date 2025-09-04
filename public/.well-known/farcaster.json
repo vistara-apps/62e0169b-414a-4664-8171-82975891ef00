@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "62e0169b 414a 4664 8171 82975891ef00",
+    "subtitle": "Built with Zara",
+    "description": "62e0169b 414a 4664 8171 82975891ef00 is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://62e0169b414a4664817182975891ef00-lnls-1rxass0ec-vistara.vercel.app",
+    "splashImageUrl": "https://62e0169b414a4664817182975891ef00-lnls-1rxass0ec-vistara.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://62e0169b414a4664817182975891ef00-lnls-1rxass0ec-vistara.vercel.app/image.png",
+    "tagline": "62e0169b 414a 4664 8171 82975891ef00",
+    "screenshotUrls": [
+      "https://62e0169b414a4664817182975891ef00-lnls-1rxass0ec-vistara.vercel.app/screenshot.png",
+      "https://62e0169b414a4664817182975891ef00-lnls-1rxass0ec-vistara.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://62e0169b414a4664817182975891ef00-lnls-1rxass0ec-vistara.vercel.app/api/webhook"
+  }
+}
