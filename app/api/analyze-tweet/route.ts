@@ -1,11 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { OpenAI } from 'openai';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: "https://openrouter.ai/api/v1",
-  dangerouslyAllowBrowser: true,
-});
+function getOpenAIClient() {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw new Error('OPENAI_API_KEY environment variable is not set');
+  }
+  
+  return new OpenAI({
+    apiKey,
+    baseURL: "https://openrouter.ai/api/v1",
+    dangerouslyAllowBrowser: true,
+  });
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -17,6 +24,22 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Check if OpenAI API key is available
+    if (!process.env.OPENAI_API_KEY) {
+      return NextResponse.json(
+        { 
+          error: 'AI analysis not available - API key not configured',
+          sentiment: 'neutral',
+          credibilityScore: 50,
+          botProbability: 50,
+          reasoning: 'Analysis unavailable without API key'
+        },
+        { status: 200 }
+      );
+    }
+
+    const openai = getOpenAIClient();
 
     // Analyze sentiment and credibility using AI
     const completion = await openai.chat.completions.create({

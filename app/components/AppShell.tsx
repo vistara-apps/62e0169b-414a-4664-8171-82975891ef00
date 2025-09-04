@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react';
 import { ConnectWallet } from '@coinbase/onchainkit/wallet';
-import { Identity } from '@coinbase/onchainkit/identity';
+import { Identity, Name, Avatar } from '@coinbase/onchainkit/identity';
 import { useAccount } from 'wagmi';
 
 interface AppShellProps {
@@ -25,7 +25,10 @@ export function AppShell({ children }: AppShellProps) {
             
             <div className="flex items-center space-x-4">
               {address ? (
-                <Identity address={address} className="text-white" />
+                <Identity address={address} className="text-white">
+                  <Avatar />
+                  <Name />
+                </Identity>
               ) : (
                 <ConnectWallet className="btn-primary" />
               )}
